@@ -10,3 +10,10 @@ services:
       - ./app:/app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
+
+  redis:
+    image: redis:3.2-alpine
+    volumes:
+      - ./data:/data
+    ports:
+      - 6379:6379
